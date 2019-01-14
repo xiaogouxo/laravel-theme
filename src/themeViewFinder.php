@@ -1,6 +1,6 @@
 <?php namespace Xiaogouxo\LaravelTheme;
 
-use Xiaogouxo\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\MyTheme;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
 use Illuminate\View\FileViewFinder;
@@ -68,7 +68,7 @@ class themeViewFinder extends FileViewFinder
 
         // Prepend current theme's view path to the remaped paths
         $newPaths = [];
-        $searchPaths = array_diff($this->paths, Theme::getLaravelViewPaths());
+        $searchPaths = array_diff($this->paths, MyTheme::getLaravelViewPaths());
         foreach ($searchPaths as $path1) {
             foreach ($themeSubPaths as $path2) {
                 $newPaths[] = $path1 . '/' . $path2;
@@ -99,7 +99,7 @@ class themeViewFinder extends FileViewFinder
         // Overide Error Pages
         if ($namespace == 'errors' || $namespace == 'mails') {
 
-            $searchPaths = array_diff($this->paths, Theme::getLaravelViewPaths());
+            $searchPaths = array_diff($this->paths, MyTheme::getLaravelViewPaths());
 
             $addPaths = array_map(function ($path) use ($namespace) {
                 return "$path/$namespace";

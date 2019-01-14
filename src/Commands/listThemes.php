@@ -1,6 +1,6 @@
 <?php namespace Xiaogouxo\LaravelTheme\Commands;
 
-use Xiaogouxo\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\MyTheme;
 
 class listThemes extends baseCommand
 {
@@ -15,7 +15,7 @@ class listThemes extends baseCommand
 
     public function handle()
     {
-        $themes = Theme::all();
+        $themes = MyTheme::all();
         $this->info('+----------------------+----------------------+----------------------+----------------------+');
         $this->info('|      Theme Name      |        Extends       |      Views Path      |      Asset Path      |');
         $this->info('+----------------------+----------------------+----------------------+----------------------+');

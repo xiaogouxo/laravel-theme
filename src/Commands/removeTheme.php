@@ -1,6 +1,6 @@
 <?php namespace Xiaogouxo\LaravelTheme\Commands;
 
-use Xiaogouxo\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\MyTheme;
 
 class removeTheme extends baseCommand
 {
@@ -14,7 +14,7 @@ class removeTheme extends baseCommand
         if ($themeName == "") {
             $themes = array_map(function ($theme) {
                 return $theme->name;
-            }, Theme::all());
+            }, MyTheme::all());
             $themeName = $this->choice('Select a theme to create a distributable package:', $themes);
         }
 
@@ -22,13 +22,13 @@ class removeTheme extends baseCommand
         $force = $this->option('force');
 
         // Check that theme exists
-        if (!Theme::exists($themeName)) {
+        if (!MyTheme::exists($themeName)) {
             $this->error("Error: Theme $themeName doesn't exist");
             return;
         }
 
         // Get the theme
-        $theme = Theme::find($themeName);
+        $theme = MyTheme::find($themeName);
 
         // Diaplay Warning
         if (!$force) {

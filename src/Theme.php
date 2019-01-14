@@ -1,6 +1,6 @@
 <?php namespace Xiaogouxo\LaravelTheme;
 
-use Xiaogouxo\LaravelTheme\Facades\Theme as Themes;
+use Xiaogouxo\LaravelTheme\Facades\MyTheme as MyThemes;
 
 class Theme
 {
@@ -16,7 +16,7 @@ class Theme
         $this->assetPath = $assetPath === null ? $themeName : $assetPath;
         $this->viewsPath = $viewsPath === null ? $themeName : $viewsPath;
         $this->parent = $parent;
-        Themes::add($this);
+        MyThemes::add($this);
     }
 
     public function getViewPaths()
@@ -93,7 +93,7 @@ class Theme
         if ($action == 'THROW_EXCEPTION') {
             throw new Exceptions\themeException("Asset not found [$url]");
         } elseif ($action == 'LOG_ERROR') {
-            \Log::warning("Asset not found [$url] in Theme [" . Themes::current()->name . "]");
+            \Log::warning("Asset not found [$url] in Theme [" . MyThemes::current()->name . "]");
         } else {
             // themes.asset_not_found = 'IGNORE'
             return '/' . $url;
@@ -134,7 +134,7 @@ class Theme
         ]));
         $themeJson->saveToFile("$viewsPath/theme.json");
 
-        Themes::rebuildCache();
+        MyThemes::rebuildCache();
     }
 
     public function uninstall()
@@ -151,7 +151,7 @@ class Theme
         $assetExists = \File::exists($assetPath);
 
         // Check that no other theme uses to the same paths (ie a child theme)
-        foreach (Themes::all() as $t) {
+        foreach (MyThemes::all() as $t) {
             if ($t !== $this && $viewsExists && $t->viewsPath == $this->viewsPath) {
                 throw new \Exception("Can not delete folder [$viewsPath] of theme [{$this->name}] because it is also used by theme [{$t->name}]", 1);
             }
@@ -165,7 +165,7 @@ class Theme
         \File::deleteDirectory($viewsPath);
         \File::deleteDirectory($assetPath);
 
-        Themes::rebuildCache();
+        MyThemes::rebuildCache();
     }
 
     /*--------------------------------------------------------------------------

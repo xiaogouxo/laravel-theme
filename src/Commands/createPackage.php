@@ -1,7 +1,7 @@
 <?php namespace Xiaogouxo\LaravelTheme\Commands;
 
 use Illuminate\Console\Command;
-use Xiaogouxo\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\MyTheme;
 
 class createPackage extends baseCommand
 {
@@ -14,10 +14,10 @@ class createPackage extends baseCommand
         if ($themeName == ""){
             $themes = array_map(function($theme){
                 return $theme->name;
-            }, Theme::all());
+            }, MyTheme::all());
             $themeName = $this->choice('Select a theme to create a distributable package:', $themes);
         }
-        $theme = Theme::find($themeName);
+        $theme = MyTheme::find($themeName);
 
         $viewsPath = themes_path($theme->viewsPath);
         $assetPath = public_path($theme->assetPath);

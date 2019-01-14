@@ -1,7 +1,7 @@
 <?php namespace Xiaogouxo\LaravelTheme\Middleware;
 
 use Closure;
-use Xiaogouxo\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\MyTheme;
 
 class setTheme
 {
@@ -15,7 +15,7 @@ class setTheme
      */
     public function handle($request, Closure $next, $themeName)
     {
-        Theme::set($themeName);
+        MyTheme::set($themeName);
         return $next($request);
     }
 }

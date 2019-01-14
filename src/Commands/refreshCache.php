@@ -1,6 +1,6 @@
 <?php namespace Xiaogouxo\LaravelTheme\Commands;
 
-use Xiaogouxo\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\MyTheme;
 
 class refreshCache extends baseCommand
 {
@@ -10,9 +10,9 @@ class refreshCache extends baseCommand
     public function handle()
     {
         // Rebuild Themes Cache
-        Theme::rebuildCache();
+        MyTheme::rebuildCache();
 
-        $this->info("Themes cache was refreshed. Currently theme caching is: " . (Theme::cacheEnabled() ? "ENABLED" : "DISABLED"));
+        $this->info("Themes cache was refreshed. Currently theme caching is: " . (MyTheme::cacheEnabled() ? "ENABLED" : "DISABLED"));
     }
 
 }

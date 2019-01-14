@@ -1,6 +1,6 @@
 <?php namespace Xiaogouxo\LaravelTheme\Commands;
 
-use Xiaogouxo\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\MyTheme;
 
 class createTheme extends baseCommand
 {
@@ -49,7 +49,7 @@ class createTheme extends baseCommand
         if ($this->confirm('Extends an other theme?')) {
             $themes = array_map(function ($theme) {
                 return $theme->name;
-            }, Theme::all());
+            }, MyTheme::all());
             $parentTheme = $this->choice('Which one', $themes);
         }
 
@@ -85,7 +85,7 @@ class createTheme extends baseCommand
             $themeJson->saveToFile(themes_path("$viewsPath/theme.json"));
 
             // Rebuild Themes Cache
-            Theme::rebuildCache();
+            MyTheme::rebuildCache();
         }
     }
 

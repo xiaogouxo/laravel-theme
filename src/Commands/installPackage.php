@@ -1,6 +1,6 @@
 <?php namespace Xiaogouxo\LaravelTheme\Commands;
 
-use Xiaogouxo\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\MyTheme;
 
 class installPackage extends baseCommand
 {
@@ -62,7 +62,7 @@ class installPackage extends baseCommand
         }
 
         // Rebuild Themes Cache
-        Theme::rebuildCache();
+        MyTheme::rebuildCache();
 
         // Del Temp Folder
         $this->clearTempFolder();
