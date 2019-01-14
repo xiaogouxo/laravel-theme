@@ -9,7 +9,7 @@ class themeViewFinder extends FileViewFinder
 {
     public function __construct(Filesystem $files, array $paths, array $extensions = null)
     {
-        $this->themeEngine = \App::make('Xiaogouxo.themes');
+        $this->themeEngine = \App::make('xiaogouxo.themes');
         parent::__construct($files, $paths, $extensions);
     }
 

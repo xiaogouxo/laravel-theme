@@ -14,7 +14,7 @@ class themeServiceProvider extends ServiceProvider
         | Bind in IOC
         |--------------------------------------------------------------------------*/
 
-        $this->app->singleton('Xiaogouxo.themes', function () {
+        $this->app->singleton('xiaogouxo.themes', function () {
             return new Themes();
         });
 
@@ -40,7 +40,7 @@ class themeServiceProvider extends ServiceProvider
         | Initialize Themes
         |--------------------------------------------------------------------------*/
 
-        $themes = $this->app->make('Xiaogouxo.themes');
+        $themes = $this->app->make('xiaogouxo.themes');
         $themes->scanThemes();
 
         /*--------------------------------------------------------------------------

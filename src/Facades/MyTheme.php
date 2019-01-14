@@ -11,6 +11,6 @@ class MyTheme extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'Xiaogouxo.themes';
+        return 'xiaogouxo.themes';
     }
 }

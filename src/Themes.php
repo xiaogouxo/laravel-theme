@@ -84,7 +84,7 @@ class Themes
 
         $themeViewFinder = app('view.finder');
         $themeViewFinder->setPaths($paths);
-        Event::fire('Xiaogouxo.laravel-theme.change', $theme);
+        Event::fire('xiaogouxo.laravel-theme.change', $theme);
         return $theme;
     }
 
