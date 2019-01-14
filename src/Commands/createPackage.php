@@ -1,7 +1,7 @@
-<?php namespace Igaster\LaravelTheme\Commands;
+<?php namespace Xiaogouxo\LaravelTheme\Commands;
 
 use Illuminate\Console\Command;
-use Igaster\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\Theme;
 
 class createPackage extends baseCommand
 {
@@ -41,7 +41,7 @@ class createPackage extends baseCommand
         system("cp -r $assetPath {$this->tempPath}/asset");
 
         // Add viewsPath into theme.json file
-        $themeJson = new \Igaster\LaravelTheme\themeManifest();
+        $themeJson = new \Xiaogouxo\LaravelTheme\themeManifest();
         $themeJson->loadFromFile("{$this->tempPath}/views/theme.json");
         $themeJson->set('views-path',$theme->viewsPath);
         $themeJson->saveToFile("{$this->tempPath}/views/theme.json");

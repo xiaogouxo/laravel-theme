@@ -1,4 +1,4 @@
-<?php namespace Igaster\LaravelTheme\Facades;
+<?php namespace Xiaogouxo\LaravelTheme\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,6 +11,6 @@ class MyTheme extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'igaster.themes';
+        return 'Xiaogouxo.themes';
     }
 }

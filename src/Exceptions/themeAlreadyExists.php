@@ -1,4 +1,4 @@
-<?php namespace Igaster\LaravelTheme\Exceptions;
+<?php namespace Xiaogouxo\LaravelTheme\Exceptions;
 
 class themeAlreadyExists extends \Exception{
 

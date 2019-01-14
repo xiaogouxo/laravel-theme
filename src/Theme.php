@@ -1,6 +1,6 @@
-<?php namespace Igaster\LaravelTheme;
+<?php namespace Xiaogouxo\LaravelTheme;
 
-use Igaster\LaravelTheme\Facades\Theme as Themes;
+use Xiaogouxo\LaravelTheme\Facades\Theme as Themes;
 
 class Theme
 {
@@ -127,7 +127,7 @@ class Theme
         \File::makeDirectory($viewsPath);
         \File::makeDirectory($assetPath);
 
-        $themeJson = new \Igaster\LaravelTheme\themeManifest(array_merge($this->settings, [
+        $themeJson = new \Xiaogouxo\LaravelTheme\themeManifest(array_merge($this->settings, [
             'name' => $this->name,
             'extends' => $this->parent ? $this->parent->name : null,
             'asset-path' => $this->assetPath,

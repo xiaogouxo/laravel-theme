@@ -1,6 +1,6 @@
-<?php namespace Igaster\LaravelTheme\Commands;
+<?php namespace Xiaogouxo\LaravelTheme\Commands;
 
-use Igaster\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\Theme;
 
 class createTheme extends baseCommand
 {
@@ -71,7 +71,7 @@ class createTheme extends baseCommand
 
         if ($this->confirm('Create Theme?', true)) {
 
-            $themeJson = new \Igaster\LaravelTheme\themeManifest(array_merge([
+            $themeJson = new \Xiaogouxo\LaravelTheme\themeManifest(array_merge([
                 "name" => $themeName,
                 "extends" => $parentTheme,
                 "asset-path" => $assetPath,

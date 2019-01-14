@@ -1,4 +1,4 @@
-<?php namespace Igaster\LaravelTheme;
+<?php namespace Xiaogouxo\LaravelTheme;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Event;
@@ -84,7 +84,7 @@ class Themes
 
         $themeViewFinder = app('view.finder');
         $themeViewFinder->setPaths($paths);
-        Event::fire('igaster.laravel-theme.change', $theme);
+        Event::fire('Xiaogouxo.laravel-theme.change', $theme);
         return $theme;
     }
 

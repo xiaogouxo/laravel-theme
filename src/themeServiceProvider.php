@@ -1,4 +1,4 @@
-<?php namespace Igaster\LaravelTheme;
+<?php namespace Xiaogouxo\LaravelTheme;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
@@ -14,7 +14,7 @@ class themeServiceProvider extends ServiceProvider
         | Bind in IOC
         |--------------------------------------------------------------------------*/
 
-        $this->app->singleton('igaster.themes', function () {
+        $this->app->singleton('Xiaogouxo.themes', function () {
             return new Themes();
         });
 
@@ -23,7 +23,7 @@ class themeServiceProvider extends ServiceProvider
         |--------------------------------------------------------------------------*/
 
         $this->app->singleton('view.finder', function ($app) {
-            return new \Igaster\LaravelTheme\themeViewFinder(
+            return new \Xiaogouxo\LaravelTheme\themeViewFinder(
                 $app['files'],
                 $app['config']['view.paths'],
                 null
@@ -40,7 +40,7 @@ class themeServiceProvider extends ServiceProvider
         | Initialize Themes
         |--------------------------------------------------------------------------*/
 
-        $themes = $this->app->make('igaster.themes');
+        $themes = $this->app->make('Xiaogouxo.themes');
         $themes->scanThemes();
 
         /*--------------------------------------------------------------------------
@@ -68,12 +68,12 @@ class themeServiceProvider extends ServiceProvider
         |--------------------------------------------------------------------------*/
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \Igaster\LaravelTheme\Commands\listThemes::class,
-                \Igaster\LaravelTheme\Commands\createTheme::class,
-                \Igaster\LaravelTheme\Commands\removeTheme::class,
-                \Igaster\LaravelTheme\Commands\createPackage::class,
-                \Igaster\LaravelTheme\Commands\installPackage::class,
-                \Igaster\LaravelTheme\Commands\refreshCache::class,
+                \Xiaogouxo\LaravelTheme\Commands\listThemes::class,
+                \Xiaogouxo\LaravelTheme\Commands\createTheme::class,
+                \Xiaogouxo\LaravelTheme\Commands\removeTheme::class,
+                \Xiaogouxo\LaravelTheme\Commands\createPackage::class,
+                \Xiaogouxo\LaravelTheme\Commands\installPackage::class,
+                \Xiaogouxo\LaravelTheme\Commands\refreshCache::class,
             ]);
         }
 

@@ -1,4 +1,4 @@
-<?php namespace Igaster\LaravelTheme;
+<?php namespace Xiaogouxo\LaravelTheme;
 
 class themeManifest
 {

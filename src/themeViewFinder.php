@@ -1,6 +1,6 @@
-<?php namespace Igaster\LaravelTheme;
+<?php namespace Xiaogouxo\LaravelTheme;
 
-use Igaster\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\Theme;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Arr;
 use Illuminate\View\FileViewFinder;
@@ -9,7 +9,7 @@ class themeViewFinder extends FileViewFinder
 {
     public function __construct(Filesystem $files, array $paths, array $extensions = null)
     {
-        $this->themeEngine = \App::make('igaster.themes');
+        $this->themeEngine = \App::make('Xiaogouxo.themes');
         parent::__construct($files, $paths, $extensions);
     }
 

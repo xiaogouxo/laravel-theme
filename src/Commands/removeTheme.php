@@ -1,6 +1,6 @@
-<?php namespace Igaster\LaravelTheme\Commands;
+<?php namespace Xiaogouxo\LaravelTheme\Commands;
 
-use Igaster\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\Theme;
 
 class removeTheme extends baseCommand
 {

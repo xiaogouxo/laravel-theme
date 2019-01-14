@@ -1,6 +1,6 @@
-<?php namespace Igaster\LaravelTheme\Commands;
+<?php namespace Xiaogouxo\LaravelTheme\Commands;
 
-use Igaster\LaravelTheme\Facades\Theme;
+use Xiaogouxo\LaravelTheme\Facades\Theme;
 
 class installPackage extends baseCommand
 {
@@ -27,7 +27,7 @@ class installPackage extends baseCommand
         exec("tar xzf $package -C {$this->tempPath}");
 
         // Read theme.json
-        $themeJson = new \Igaster\LaravelTheme\themeManifest();
+        $themeJson = new \Xiaogouxo\LaravelTheme\themeManifest();
         $themeJson->loadFromFile("{$this->tempPath}/views/theme.json");
 
         // Check if theme is already installed
